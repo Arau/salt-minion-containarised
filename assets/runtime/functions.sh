@@ -390,7 +390,7 @@ function configure_salt_minion()
 {
   log_info "Configuring salt-minion service ..."
 
-  local SALT_MINION_CONF_DIR=/etc/salt
+  local SALT_MINION_CONF_DIR=/etc/salt/
   exec_as_salt cp -p "${SALT_RUNTIME_DIR}/config/minion" "${SALT_MINION_CONF_DIR}/minion"
 
 }

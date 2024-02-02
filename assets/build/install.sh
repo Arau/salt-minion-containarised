@@ -87,13 +87,15 @@ stdout_logfile=/dev/stdout
 stdout_logfile_maxbytes=0
 stderr_logfile=/dev/stderr
 stderr_logfile_maxbytes=0
+EOF
 
+cat > /etc/supervisor/conf.d/salt-minion.conf <<EOF
 [program:salt-minion]
-priority=5
+priority=6
 directory=${SALT_HOME}
 environment=HOME=${SALT_HOME}
 command=/usr/bin/salt-minion
-user=${SALT_USER}
+user=root
 autostart=true
 autorestart=true
 stopsignal=TERM
