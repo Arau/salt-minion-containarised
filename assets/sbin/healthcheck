@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# shellcheck disable=SC2312
-salt-call --local --no-return-event --no-color \
-  status.ping_master localhost 2>/dev/null | grep -q True

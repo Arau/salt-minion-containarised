@@ -1,9 +1,0 @@
-id: minion1
-master: localhost
-verify_master_pubkey_sign: False
-master_alive_interval: 10
-retry_dns: 5
-retry_dns_count: 4
-autosign_grains:
-  - uuid
-  - id
