@@ -133,3 +133,13 @@ function add_salt_repository()
   download "${root_url}/SALT-PROJECT-GPG-PUBKEY-2023.gpg" "${keyring_file}"
   echo "deb [signed-by=${keyring_file} arch=${arch}] ${root_url}/minor/${SALT_VERSION} ${VERSION_CODENAME:?} main" > /etc/apt/sources.list.d/salt.list
 }
+
+#---  FUNCTION  -------------------------------------------------------------------------------------------------------
+#          NAME:  set_minion_id
+#   DESCRIPTION:  Configure salt with a custom minion name
+#----------------------------------------------------------------------------------------------------------------------
+function set_minion_id()
+{
+  local name="$1"
+  echo "id: $name" > /etc/salt/minion
+}
