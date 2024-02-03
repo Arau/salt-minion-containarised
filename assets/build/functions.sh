@@ -141,5 +141,25 @@ function add_salt_repository()
 function set_minion_id()
 {
   local name="$1"
-  echo "id: $name" > /etc/salt/minion
+  echo "id: $name" >> /etc/salt/minion
+}
+
+#---  FUNCTION  -------------------------------------------------------------------------------------------------------
+#          NAME:  set_salt_master_addr
+#   DESCRIPTION:  Configure the address of the Salt master
+#----------------------------------------------------------------------------------------------------------------------
+function set_salt_master_addr()
+{
+  local addr="$1"
+  echo "master: $addr" >> /etc/salt/minion
+}
+
+#---  FUNCTION  -------------------------------------------------------------------------------------------------------
+#          NAME:  set_minion_id
+#   DESCRIPTION:  Configure salt with a custom minion name
+#----------------------------------------------------------------------------------------------------------------------
+function initialize_minion_conf()
+{
+    echo '' > /etc/salt/minion
+
 }
